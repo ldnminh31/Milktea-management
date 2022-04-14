@@ -55,6 +55,7 @@ CREATE TABLE `khachhang` (
   `idkhachhang` int(10) NOT NULL,
   `tenkhachhang` varchar(50) DEFAULT NULL,
   `sdt` int(10) DEFAULT NULL,
+  `ngaysinh` date DEFAULT NULL,
   `diem` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -79,8 +80,8 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`idnhanvien`, `hoten`, `ngaythangnamsinh`, `sdt`, `diachi`, `vitri`, `luong`) VALUES
-(4, 'MINH LE', '2001-03-31', 1234567, 'CAN THO', 'Manager', '200k/giờ'),
-(5, 'LE ANH KHOI', '2022-04-12', 1234567, 'CAN THO', 'Manager', '200k/giờ');
+(1, 'MINH LE', '2001-03-31', 1234567, 'CAN THO', 'Manager', '200k/giờ'),
+(2, 'LE ANH KHOI', '2022-04-12', 1234567, 'CAN THO', 'Manager', '200k/giờ');
 
 -- --------------------------------------------------------
 
@@ -161,6 +162,12 @@ ALTER TABLE `nhanvien`
 --
 ALTER TABLE `sanpham`
   MODIFY `idsanpham` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT cho bảng `khachhang`
+--
+ALTER TABLE `khachhang`
+  MODIFY `idkhachhang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
