@@ -44,7 +44,7 @@ if (!isset($_COOKIE['user']))
                 foreach ($res as $row) {
                     array_push($data, $row);
                     echo '
-             <tr id=' . $row['idkhachhang'] . '>
+             <tr id=' . $row['sdt'] . '>
                     <td scope="row">' . $row['tenkhachhang'] . '</td>
                     <td data-label="Số điện thoại">' . $row['sdt'] . '</td>
                     <td data-label="Điểm">' . $row['diem'] . '</td>
@@ -52,7 +52,7 @@ if (!isset($_COOKIE['user']))
                     
                     
                     <td class="d-flex" data-label="Hành động">
-                        <button id="' . $row['idkhachhang'] . '" type="button" class="btn btn-primary flex-fill mx-1" data-bs-toggle="modal" data-bs-target="#updateModal">Sửa</button>
+                        <button id="' . $row['sdt'] . '" type="button" class="btn btn-primary flex-fill mx-1" data-bs-toggle="modal" data-bs-target="#updateModal">Sửa</button>
                         <a href="./database/customer/delete_customer.php?tenkhachhang=' . $row['tenkhachhang'] . '"><button type="button" class="btn btn-danger flex-fill mx-1">Xóa</button></a>
                     </td>
                 </tr>

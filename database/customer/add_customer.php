@@ -4,9 +4,9 @@ try {
     $sql = "INSERT INTO khachhang (tenkhachhang, sdt, ngaysinh, diem) VALUES (:tenkhachhang, :sdt,:ngaysinh ,:diem);";
     $sth = $conn->prepare($sql);
     $sth->bindParam('tenkhachhang', $_POST['tenkhachhang'], PDO::PARAM_STR);
-    $sth->bindParam('sdt', $_POST['sdt'], PDO::PARAM_INT);
+    $sth->bindParam('sdt', $_POST['sdt'], PDO::PARAM_STR);
     $sth->bindParam('ngaysinh', $_POST['ngaysinh'], PDO::PARAM_STR);
-    $sth->bindParam('diem', $_POST['diem'], PDO::PARAM_INT);
+    $sth->bindParam('diem', $_POST['diem'], PDO::PARAM_STR); 
     $sth->execute();
 } catch (Exception $e) {
     echo "<script>alert('Lỗi hệ thống')</script>";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 13, 2022 lúc 02:21 PM
+-- Thời gian đã tạo: Th4 22, 2022 lúc 12:10 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 7.4.28
 
@@ -52,12 +52,18 @@ CREATE TABLE `hoadon` (
 --
 
 CREATE TABLE `khachhang` (
-  `idkhachhang` int(10) NOT NULL,
-  `tenkhachhang` varchar(50) DEFAULT NULL,
-  `sdt` int(10) DEFAULT NULL,
-  `ngaysinh` date DEFAULT NULL,
-  `diem` int(10) DEFAULT NULL
+  `sdt` int(10) NOT NULL,
+  `tenkhachhang` varchar(50) NOT NULL,
+  `ngaysinh` date NOT NULL,
+  `diem` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `khachhang`
+--
+
+INSERT INTO `khachhang` (`sdt`, `tenkhachhang`, `ngaysinh`, `diem`) VALUES
+(1234567, 'ABBV', '2022-04-22', 1);
 
 -- --------------------------------------------------------
 
@@ -80,8 +86,8 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`idnhanvien`, `hoten`, `ngaythangnamsinh`, `sdt`, `diachi`, `vitri`, `luong`) VALUES
-(1, 'MINH LE', '2001-03-31', 1234567, 'CAN THO', 'Manager', '200k/giờ'),
-(2, 'LE ANH KHOI', '2022-04-12', 1234567, 'CAN THO', 'Manager', '200k/giờ');
+(4, 'MINH LE', '2001-03-31', 1234567, 'CAN THO', 'Manager', '200k/giờ'),
+(5, 'LE ANH KHOI', '2022-04-12', 1234567, 'CAN THO', 'Manager', '200k/giờ');
 
 -- --------------------------------------------------------
 
@@ -103,7 +109,9 @@ CREATE TABLE `sanpham` (
 INSERT INTO `sanpham` (`idsanpham`, `tensanpham`, `dongia`, `mota`) VALUES
 (2, 'Trà Sữa Truyền Thống', '200000', 'Topping tran chau'),
 (9, 'Trà sữa lúa mạch', '300000', 'Thơm ngon bổ rẻ'),
-(11, 'Trà Đào', '20000', 'Rất ngon\r\n');
+(11, 'Trà Đào', '20000', 'Rất ngon\r\n'),
+(12, 'Trà Sữa Trân Châu Đường Đen', '50000', 'Đặc biệt thơm ngon'),
+(13, 'Nước cam', '20000', 'Rất ngon');
 
 -- --------------------------------------------------------
 
@@ -133,7 +141,7 @@ ALTER TABLE `hoadon`
 -- Chỉ mục cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  ADD PRIMARY KEY (`idkhachhang`);
+  ADD PRIMARY KEY (`sdt`);
 
 --
 -- Chỉ mục cho bảng `nhanvien`
@@ -161,13 +169,7 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `idsanpham` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT cho bảng `khachhang`
---
-ALTER TABLE `khachhang`
-  MODIFY `idkhachhang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `idsanpham` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

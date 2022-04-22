@@ -32,7 +32,7 @@ if (!isset($_COOKIE['user']))
             <thead>
                 <tr>
                     <th scope="col">Tên sản phẩm</th>
-                    <th scope="col">Đơn giá</th>
+                    <th scope="col" class="text-center">Đơn giá</th>
                     <th width="30%" scope="col">Mô tả</th>
                     <th class="text-center" scope="col">Hành động</th>
                 </tr>
@@ -48,7 +48,7 @@ if (!isset($_COOKIE['user']))
                     echo '
              <tr id='.$row['idsanpham'].'>
                     <td scope="row">' . $row['tensanpham'] . '</td>
-                    <td data-label="Đơn giá">' . $row['dongia'] . '</td>
+                    <td align="center">' . number_format($row['dongia']) . '</td>
                     <td data-label="Mô tả">' . $row['mota'] . '</td>
                     <td class="d-flex" data-label="Hành động">
                         <button id="'.$row['idsanpham'].'" type="button" class="btn btn-primary flex-fill mx-1" data-bs-toggle="modal" data-bs-target="#updateModal">Sửa</button>
