@@ -124,7 +124,7 @@ if (!isset($_COOKIE['user']))
                 }
                 // điền vào input
                 btn.addEventListener('click', () => {
-                    document.querySelector("form").action = `/NLCS/database/product/update_staff.php?id=${id}`;
+                    document.querySelector("form").action = `/NLCS/database/staff/update_staff.php?id=${id}`;
                     const inputList = document.querySelectorAll("form .form-control")
                     inputList.forEach((value, key) => {
                         value.defaultValue = data[key]
@@ -135,7 +135,7 @@ if (!isset($_COOKIE['user']))
             }
             if (btn.outerText==="Thêm nhân viên"){
                 btn.addEventListener('click', () => {
-                    document.querySelector("form").action = `/NLCS/database/product/add_staff.php`;
+                    document.querySelector("form").action = `/NLCS/database/staff/add_staff.php`;
                     const inputList = document.querySelectorAll("form .form-control")
                     inputList.forEach((value, key) => {
                         value.defaultValue = ""

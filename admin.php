@@ -2,7 +2,6 @@
 // check cookie
 if (!isset($_COOKIE['user']))
     echo "<script>window.location.replace('/NLCS/index.php');</script>";
-
 ?>
 <!DOCTYPE html>
 <html lang="vi">
