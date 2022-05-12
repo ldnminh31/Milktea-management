@@ -32,7 +32,7 @@ class TableRows extends RecursiveIteratorIterator
 
     function endChildren()
     {
-        echo '<td><input name="amount '.$this->id.'" value="0" min="0" type="number"/></td>';
+        echo '<td><input name='.$this->id.' value="0" min="0" type="number"/></td>';
         echo "</tr>" . "\n";
     }
 }
