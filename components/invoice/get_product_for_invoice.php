@@ -1,10 +1,10 @@
 <?php
 echo '<table class="table table-bordered">';
 echo '<tr>
-<th>Tên sản phẩm</th>
-<th class="text-center">Đơn giá</th>
-<th width="40%">Mô tả</th>
-<th width="5%">Số lượng</th>
+<th>Product</th>
+<th class="text-center">Price</th>
+<th width="40%">Description</th>
+<th width="5%">Amount</th>
 </tr>';
 
 class TableRows extends RecursiveIteratorIterator
@@ -18,7 +18,7 @@ class TableRows extends RecursiveIteratorIterator
     {
         $key = parent::key();
         $value = parent::current();
-        if ($key=="idsanpham") $this->id = $value;
+        if ($key == "idsanpham") $this->id = $value;
         setlocale(LC_MONETARY, "en_US");
         if (is_numeric($value))
             return '<td align="center" >' . number_format($value) . "</td>";
@@ -32,7 +32,7 @@ class TableRows extends RecursiveIteratorIterator
 
     function endChildren()
     {
-        echo '<td><input name='.$this->id.' value="0" min="0" type="number"/></td>';
+        echo '<td><input name=' . $this->id . ' value="0" min="0" type="number"/></td>';
         echo "</tr>" . "\n";
     }
 }
@@ -41,24 +41,17 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "nlcs";
+include_once './database/connect.php';
+$stmt = $conn->prepare("SELECT * FROM sanpham");
+$stmt->execute();
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM sanpham");
-    $stmt->execute();
+// set the resulting array to associative
+$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+foreach (new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k => $v) {
+    if ($k == "idsanpham") {
 
-    // set the resulting array to associative
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    foreach (new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k => $v) {
-        if ($k == "idsanpham") {
-            
-            continue;
-        }
-        echo $v;
+        continue;
     }
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    echo $v;
 }
-$conn = null;
 echo "</table>";

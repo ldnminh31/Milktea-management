@@ -22,18 +22,18 @@ if (!isset($_COOKIE['user']))
     include_once('./components/sidebar.php');
     ?>
     <div>
-        <h2 align="center">Quản lý nhân viên</h2>
-        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: auto; display: block">Thêm nhân viên</button>
+        <h2 align="center">Manage staff</h2>
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: auto; display: block">Add staff</button>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Tên nhân viên</th>
-                    <th scope="col">Ngày sinh</th>
-                    <th scope="col">Số điện thoại</th>
-                    <th scope="col">Địa chỉ</th>
-                    <th scope="col">Vị trí công việc</th>
-                    <th scope="col">Lương</th>
-                    <th scope="col">Hành động</th>
+                    <th scope="col">Staff's name</th>
+                    <th scope="col">Birthday</th>
+                    <th scope="col">Phone number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,11 +48,11 @@ if (!isset($_COOKIE['user']))
                     echo '
              <tr id=' . $row['idnhanvien'] . '>
                     <td scope="row">' . $row['hoten'] . '</td>
-                    <td data-label="Đơn giá">' . $row['ngaythangnamsinh'] . '</td>
-                    <td data-label="Mô tả">' . $row['sdt'] . '</td>
-                    <td data-label="Mô tả">' . $row['diachi'] . '</td>
-                    <td data-label="Mô tả">' . $row['vitri'] . '</td>
-                    <td data-label="Mô tả">' . $row['luong'] . '</td>
+                    <td data-label="Price">' . $row['ngaythangnamsinh'] . '</td>
+                    <td data-label="Description">' . $row['sdt'] . '</td>
+                    <td data-label="Description">' . $row['diachi'] . '</td>
+                    <td data-label="Description">' . $row['vitri'] . '</td>
+                    <td data-label="Description">' . $row['luong'] . '</td>
                     <td class="d-flex" data-label="Hành động">
                         <button id="' . $row['idnhanvien'] . '" type="button" 
                         class="btn btn-primary flex-fill mx-1" 
@@ -73,37 +73,37 @@ if (!isset($_COOKIE['user']))
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thêm nhân viên</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add staff</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- form -->
                     <form method="POST" action="/NLCS/database/staff/add_staff.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Tên nhân viên</label>
+                            <label for="exampleInputEmail1" class="form-label">Staff's name</label>
                             <input name="hoten" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Ngày sinh</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Birthday</label>
                             <input name="ngaythangnamsinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Số điện thoại</label>
+                            <label for="exampleInputPassword1" class="form-label">Phone number</label>
                             <input name="sdt" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Địa chỉ</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                             <input name="diachi" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Vị trí công việc</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Position</label>
                             <input name="vitri" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Lương</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Salary</label>
                             <input name="luong" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
-                        <button id="submit-btn" type="submit" class="btn btn-primary">Thêm</button>
+                        <button id="submit-btn" type="submit" class="btn btn-primary">Add</button>
                     </form>
                 </div>
             </div>
@@ -116,37 +116,37 @@ if (!isset($_COOKIE['user']))
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cập nhật nhân viên </h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update staff</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- form -->
                     <form method="POST" action="/NLCS/database/staff/update_staff.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Tên nhân viên</label>
+                            <label for="exampleInputEmail1" class="form-label">Staff's name</label>
                             <input name="hoten" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Ngày sinh</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Birthday</label>
                             <input name="ngaythangnamsinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Số điện thoại</label>
+                            <label for="exampleInputPassword1" class="form-label">Phone number</label>
                             <input name="sdt" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Địa chỉ</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                             <input name="diachi" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Vị trí công việc</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Position</label>
                             <input name="vitri" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Lương</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Salary</label>
                             <input name="luong" class="form-control" id="exampleFormControlTextarea1"></input>
                         </div>
-                        <button id="submit-btn" type="submit" class="btn btn-primary">Thêm</button>
+                        <button id="submit-btn" type="submit" class="btn btn-primary">Add</button>
                     </form>
                 </div>
             </div>
@@ -175,19 +175,19 @@ if (!isset($_COOKIE['user']))
                     inputList.forEach((value, key) => {
                         value.defaultValue = data[key]
                     })
-                    document.querySelector(".modal-title").innerText = "Cập nhật thông tin";
-                    document.getElementById("submit-btn").innerText = "Cập nhật";
+                    document.querySelector(".modal-title").innerText = "Update thông tin";
+                    document.getElementById("submit-btn").innerText = "Update";
                 })
             }
-            if (btn.outerText === "Thêm nhân viên") {
+            if (btn.outerText === "Update staff") {
                 btn.addEventListener('click', () => {
                     document.querySelector("form").action = `/NLCS/database/staff/add_staff.php`;
                     const inputList = document.querySelectorAll("form .form-control")
                     inputList.forEach((value, key) => {
                         value.defaultValue = ""
                     })
-                    document.querySelector(".modal-title").innerText = "Thêm nhân viên";
-                    document.getElementById("submit-btn").innerText = "Thêm";
+                    document.querySelector(".modal-title").innerText = "Add staff";
+                    document.getElementById("submit-btn").innerText = "Add";
                 })
             }
         }

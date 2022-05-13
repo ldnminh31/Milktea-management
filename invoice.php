@@ -18,12 +18,13 @@ if (!isset($_COOKIE['user']))
     <?php
     include_once('./components/sidebar.php')
     ?>
+    <h3 align="center">MANAGE INVOICE</h3>
     <div class="px-5">
         <!-- Menu phụ -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item"><a href="/NLCS/invoice.php">Xem hóa đơn</a></li>
-                <li class="breadcrumb-item"><a href="/NLCS/invoice.php?page=create">Tạo hóa đơn</a></li>
+                <li class="breadcrumb-item"><a href="/NLCS/invoice.php">View</a></li>
+                <li class="breadcrumb-item"><a href="/NLCS/invoice.php?page=create">Create</a></li>
             </ol>
         </nav>
         <!-- Các trang -->

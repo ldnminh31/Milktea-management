@@ -6,7 +6,6 @@
         $conn->query($sql);
         
     } catch (\Throwable $th) {
-        echo "<script>alert('Lỗi hệ thống')</script>";
+        echo "<script>alert('Error')</script>";
     }   
     echo "<script>window.location.replace('/NLCS/staff.php');</script>";
-?>

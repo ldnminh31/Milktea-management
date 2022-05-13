@@ -12,7 +12,6 @@ try{
     $sth->bindParam('luong', $_POST['luong'], PDO::PARAM_STR);
     $sth->execute();
 } catch (Exception $e){
-    echo "<script>alert('Lỗi hệ thống')</script>";
+    echo "<script>alert('Error')</script>";
 }
 echo "<script>window.location.replace('/NLCS/staff.php');</script>";
-?>

@@ -7,5 +7,5 @@ try {
   $conn = new PDO("mysql:host=$servername;dbname=sql6492085", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-  exit ("<script>alert('Kết nối CSDL thất bại')</script>");
+  exit ("<script>alert('Fail to connect database')</script>");
 }

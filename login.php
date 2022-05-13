@@ -6,7 +6,7 @@ const ADMIN_PSW = "123456";
 $input_username =  $_POST['username'];
 $input_password = $_POST['password'];
 if ($input_username!=ADMIN_USERNAME || $input_password!=ADMIN_PSW){
-    echo "<script type='text/javascript'>alert('Đăng nhập thất bại'); window.location = '/NLCS'</script>";
+    echo "<script type='text/javascript'>alert('Login failed'); window.location = '/NLCS'</script>";
 }
 else{
     setcookie('user','admin',time()+60*60*24*30);

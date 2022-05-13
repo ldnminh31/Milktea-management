@@ -1,7 +1,7 @@
 <?php
-try{
+try {
     include_once('../connect.php');
-    $sql = "UPDATE khachhang SET tenkhachhang=:tenkhachhang, sdt=:sdt, diem=:diem, ngaysinh=:ngaysinh WHERE sdt=".$_GET["id"];
+    $sql = "UPDATE khachhang SET tenkhachhang=:tenkhachhang, sdt=:sdt, diem=:diem, ngaysinh=:ngaysinh WHERE sdt=" . $_GET["id"];
     $sth = $conn->prepare($sql);
     $sth->bindParam('tenkhachhang', $_POST['tenkhachhang'], PDO::PARAM_STR);
     $sth->bindParam('sdt', $_POST['sdt'], PDO::PARAM_INT);
@@ -9,7 +9,7 @@ try{
     $sth->bindParam('ngaysinh', $_POST['ngaysinh'], PDO::PARAM_STR);
 
     $sth->execute();
-} catch (Exception $e){
-    echo "<script>alert('Lỗi hệ thống')</script>";
+} catch (Exception $e) {
+    echo "<script>alert('Error')</script>";
 }
 echo "<script>window.location.replace('/NLCS/customer.php');</script>";
