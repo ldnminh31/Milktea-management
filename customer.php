@@ -74,21 +74,21 @@ if (!isset($_COOKIE['user']))
                     <!-- form -->
                     <form method="post" action="/NLCS/database/customer/add_customer.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Customer's name</label>
-                            <input name="tenkhachhang" type="text" class="form-control">
+                            <label for="exampleinput requiredEmail1" class="form-label">Customer's name</label>
+                            <input required name="tenkhachhang" type="text" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                            <input name="sdt" type="text" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Phone number</label>
+                            <input required name="sdt" type="text" class="form-control" id="exampleinput requiredPassword1">
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Birthday</label>
-                            <input name="ngaysinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="ngaysinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Point</label>
-                            <input name="diem" type="text" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Point</label>
+                            <input required name="diem" type="text" class="form-control" id="exampleinput requiredPassword1">
                         </div>
                         <button type="submit" class="btn btn-primary">Add</button>
                     </form>
@@ -108,20 +108,20 @@ if (!isset($_COOKIE['user']))
                     <!-- form -->
                     <form method="post" action="/NLCS/database/customer/update_customer.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Staff's name</label>
-                            <input name="tenkhachhang" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="exampleinput requiredEmail1" class="form-label">Staff's name</label>
+                            <input required name="tenkhachhang" class="form-control" id="exampleinput requiredEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                            <input name="sdt" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Phone number</label>
+                            <input required name="sdt" class="form-control" id="exampleinput requiredPassword1">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Point</label>
-                            <input name="diem" type="text" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Point</label>
+                            <input required name="diem" type="text" class="form-control" id="exampleinput requiredPassword1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Birthday</label>
-                            <input name="ngaysinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="ngaysinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Update</button>
@@ -143,7 +143,7 @@ if (!isset($_COOKIE['user']))
                 for (let index = 0; index < 4; index++) {
                     data.push(row[index].innerText)
                 }
-                // điền vào input
+                // điền vào input required
                 btn.addEventListener('click', () => {
                     document.querySelector("#updateModal form").action = `/NLCS/database/customer/update_customer.php?id=${id}`;
                     const inputList = document.querySelectorAll("#updateModal form .form-control")

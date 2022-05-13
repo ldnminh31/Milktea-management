@@ -80,28 +80,28 @@ if (!isset($_COOKIE['user']))
                     <!-- form -->
                     <form method="POST" action="/NLCS/database/staff/add_staff.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Staff's name</label>
-                            <input name="hoten" class="form-control">
+                            <label for="exampleinput requiredEmail1" class="form-label">Staff's name</label>
+                            <input required name="hoten" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Birthday</label>
-                            <input name="ngaythangnamsinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="ngaythangnamsinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                            <input name="sdt" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Phone number</label>
+                            <input required name="sdt" class="form-control" id="exampleinput requiredPassword1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                            <input name="diachi" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="diachi" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Position</label>
-                            <input name="vitri" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="vitri" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Salary</label>
-                            <input name="luong" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="luong" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <button id="submit-btn" type="submit" class="btn btn-primary">Add</button>
                     </form>
@@ -123,28 +123,28 @@ if (!isset($_COOKIE['user']))
                     <!-- form -->
                     <form method="POST" action="/NLCS/database/staff/update_staff.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Staff's name</label>
-                            <input name="hoten" class="form-control">
+                            <label for="exampleinput requiredEmail1" class="form-label">Staff's name</label>
+                            <input required name="hoten" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Birthday</label>
-                            <input name="ngaythangnamsinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="ngaythangnamsinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                            <input name="sdt" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Phone number</label>
+                            <input required name="sdt" class="form-control" id="exampleinput requiredPassword1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                            <input name="diachi" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="diachi" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Position</label>
-                            <input name="vitri" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="vitri" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Salary</label>
-                            <input name="luong" class="form-control" id="exampleFormControlTextarea1"></input>
+                            <input required name="luong" class="form-control" id="exampleFormControlTextarea1"></input required>
                         </div>
                         <button id="submit-btn" type="submit" class="btn btn-primary">Add</button>
                     </form>
@@ -168,7 +168,7 @@ if (!isset($_COOKIE['user']))
                 for (let index = 0; index < 6; index++) {
                     data.push(row[index].innerText)
                 }
-                // điền vào input
+                // điền vào input required
                 btn.addEventListener('click', () => {
                     document.querySelector("form").action = `/NLCS/database/staff/update_staff.php?id=${id}`;
                     const inputList = document.querySelectorAll("form .form-control")

@@ -3,9 +3,9 @@
 const ADMIN_USERNAME = "admin";
 const ADMIN_PSW = "123456";
 // check
-$input_username =  $_POST['username'];
-$input_password = $_POST['password'];
-if ($input_username!=ADMIN_USERNAME || $input_password!=ADMIN_PSW){
+$username =  $_POST['username'];
+$password = $_POST['password'];
+if ($username!=ADMIN_USERNAME || $password!=ADMIN_PSW){
     echo "<script type='text/javascript'>alert('Login failed'); window.location = '/NLCS'</script>";
 }
 else{

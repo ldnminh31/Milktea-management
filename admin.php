@@ -16,7 +16,7 @@ if (!isset($_COOKIE['user']))
 
 <body>
     <?php include_once('./components/sidebar.php')?>
-    <h1 style="text-align: center">Ứng dụng web quản lý quán trà sữa</h1>
+    <h1 style="text-align: center">Welcome admin!</h1>
 </body>
 
 </html>

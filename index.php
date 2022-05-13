@@ -33,14 +33,12 @@ echo "<script>window.history.forward()</script>";
       <div class="field">
         <label>Username</label>
         <br>
-        <input name="username" type="text" required>
-
+        <input style="width: 100%" required name="username" type="text">
       </div>
       <div class="field">
         <label>Password</label>
         <br>
-        <input name="password" type="password" required>
-
+        <input style="width: 100%" required name="password" type="password">
       </div>
       <div class="field text-center">
         <button type="reset">Reset</button>
@@ -54,9 +52,9 @@ echo "<script>window.history.forward()</script>";
 
   <!-- <form class="login-box" method="post" action="login.php">
     <div>Tài khoản</div>
-    <input name="username" /><br />
+    <input required name="username" /><br />
     <div>Mật khẩu</div>
-    <input name="password" type="password" /><br />
+    <input required name="password" type="password" /><br />
     <button type="submit">Đăng nhập</button>
 
   </form> -->

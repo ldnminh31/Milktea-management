@@ -73,12 +73,12 @@ if (!isset($_COOKIE['user']))
                     <!-- form -->
                     <form method="post" action="/NLCS/database/product/add_product.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Product</label>
-                            <input name="tensanpham" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="exampleinput requiredEmail1" class="form-label">Product</label>
+                            <input required name="tensanpham" class="form-control" id="exampleinput requiredEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Price</label>
-                            <input name="dongia" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Price</label>
+                            <input required type="number" name="dongia" class="form-control" id="exampleinput requiredPassword1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
@@ -102,12 +102,12 @@ if (!isset($_COOKIE['user']))
                     <!-- form -->
                     <form method="post" action="/NLCS/database/product/update_product.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Product</label>
-                            <input name="tensanpham" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="exampleinput requiredEmail1" class="form-label">Product</label>
+                            <input required name="tensanpham" class="form-control" id="exampleinput requiredEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Price</label>
-                            <input name="dongia" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleinput requiredPassword1" class="form-label">Price</label>
+                            <input required type="number" name="dongia" class="form-control" id="exampleinput requiredPassword1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
@@ -130,7 +130,7 @@ if (!isset($_COOKIE['user']))
                 for (let index = 0; index < 3; index++) {
                     data.push(row[index].innerText)
                 }
-                // điền vào input
+                // điền vào input required
                 btn.addEventListener('click', () => {
                     document.querySelector("#updateModal form").action = `/NLCS/database/product/update_product.php?id=${id}`;
                     const inputList = document.querySelectorAll("#updateModal form .form-control")
