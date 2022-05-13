@@ -5,6 +5,8 @@ if (isset($_COOKIE['user'])) {
 }
 echo "<script>window.history.forward()</script>";
 ?>
+
+
 <!-- user interface -->
 <!DOCTYPE html>
 <html lang="vi">
@@ -13,42 +15,56 @@ echo "<script>window.history.forward()</script>";
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css"/>
   <title>Login</title>
-  <style>
-    .login-box{
-      display: block;
-      margin: auto;
-      margin-top: 100px;
-      box-shadow: 0 0 6px 0;
-      width: fit-content;
-      padding: 40px;
-      font-size: 18px;
-    }
-    input{
-      margin-bottom: 10px;
-      min-width: 200px;
-      height: 30px;
-      font-size: inherit;
-    }
-    button{
-      width: 100%;
-      margin-top: 5px;
-      font-size: inherit;
-      cursor: pointer;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 
 <body>
-  <!-- Form đăng nhập -->
-  <form class="login-box" method="post" action="login.php">
+
+  <div class="wrapper">
+    <div class="title">
+      Đăng Nhập
+    </div>
+
+    <form action="./login.php" method="POST">
+      <div class="field">
+        <label>Username</label>
+        <br>
+        <input name="username" type="text" required>
+
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <br>
+        <input name="password" type="password" required>
+
+      </div>
+      <div class="field text-center">
+        <button type="reset">Đặt lại</button>
+        <br>
+        <button type="submit">Đăng nhập</button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <!-- <form class="login-box" method="post" action="login.php">
     <div>Tài khoản</div>
     <input name="username" /><br />
     <div>Mật khẩu</div>
     <input name="password" type="password" /><br />
     <button type="submit">Đăng nhập</button>
-  </form>
+
+  </form> -->
+
+
+
+  <!-- script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
