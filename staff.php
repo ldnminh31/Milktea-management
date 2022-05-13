@@ -19,7 +19,7 @@ if (!isset($_COOKIE['user']))
 
 <body>
     <?php
-    include_once('./components/sidebar.php')
+    include_once('./components/sidebar.php');
     ?>
     <div>
         <h2 align="center">Quản lý nhân viên</h2>
@@ -109,10 +109,56 @@ if (!isset($_COOKIE['user']))
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <!-- modal sửa-->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cập nhật nhân viên </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- form -->
+                    <form method="POST" action="/NLCS/database/staff/update_staff.php">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Tên nhân viên</label>
+                            <input name="hoten" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Ngày sinh</label>
+                            <input name="ngaythangnamsinh" type="date" class="form-control" id="exampleFormControlTextarea1"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Số điện thoại</label>
+                            <input name="sdt" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Địa chỉ</label>
+                            <input name="diachi" class="form-control" id="exampleFormControlTextarea1"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Vị trí công việc</label>
+                            <input name="vitri" class="form-control" id="exampleFormControlTextarea1"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Lương</label>
+                            <input name="luong" class="form-control" id="exampleFormControlTextarea1"></input>
+                        </div>
+                        <button id="submit-btn" type="submit" class="btn btn-primary">Thêm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <script>
         const btnList = document.getElementsByTagName("button");
-        for (btn of btnList){
+        for (btn of btnList) {
 
             if (btn.outerText === 'Sửa') {
                 // lấy dữ liệu
@@ -133,7 +179,7 @@ if (!isset($_COOKIE['user']))
                     document.getElementById("submit-btn").innerText = "Cập nhật";
                 })
             }
-            if (btn.outerText==="Thêm nhân viên"){
+            if (btn.outerText === "Thêm nhân viên") {
                 btn.addEventListener('click', () => {
                     document.querySelector("form").action = `/NLCS/database/staff/add_staff.php`;
                     const inputList = document.querySelectorAll("form .form-control")
@@ -146,6 +192,10 @@ if (!isset($_COOKIE['user']))
             }
         }
     </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
