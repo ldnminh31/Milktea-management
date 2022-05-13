@@ -26,7 +26,7 @@ echo "<script>window.history.forward()</script>";
 
   <div class="wrapper">
     <div class="title">
-      Đăng Nhập
+      Login
     </div>
 
     <form action="./login.php" method="POST">
@@ -43,9 +43,9 @@ echo "<script>window.history.forward()</script>";
 
       </div>
       <div class="field text-center">
-        <button type="reset">Đặt lại</button>
+        <button type="reset">Reset</button>
         <br>
-        <button type="submit">Đăng nhập</button>
+        <button type="submit">Login</button>
       </div>
 
     </form>

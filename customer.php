@@ -52,8 +52,8 @@ if (!isset($_COOKIE['user']))
                     
                     
                     <td class="d-flex" data-label="Hành động">
-                        <button id="' . $row['sdt'] . '" type="button" class="btn btn-primary flex-fill mx-1" data-bs-toggle="modal" data-bs-target="#updateModal">Sửa</button>
-                        <a href="./database/customer/delete_customer.php?tenkhachhang=' . $row['tenkhachhang'] . '"><button type="button" class="btn btn-danger flex-fill mx-1">Xóa</button></a>
+                        <button id="' . $row['sdt'] . '" type="button" class="btn btn-primary flex-fill mx-1" data-bs-toggle="modal" data-bs-target="#updateModal">Edit</button>
+                        <a href="./database/customer/delete_customer.php?tenkhachhang=' . $row['tenkhachhang'] . '"><button type="button" class="btn btn-danger flex-fill mx-1">Delete</button></a>
                     </td>
                 </tr>
         ';
@@ -135,7 +135,7 @@ if (!isset($_COOKIE['user']))
     <script>
         const btnList = document.getElementsByTagName("button");
         for (btn of btnList)
-            if (btn.outerText === 'Sửa') {
+            if (btn.outerText === 'Edit') {
                 // lấy dữ liệu
                 const id = btn.id
                 const row = document.querySelectorAll(`tr[id="${btn.id}"] td`)

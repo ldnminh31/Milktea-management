@@ -57,9 +57,9 @@ if (!isset($_COOKIE['user']))
                         <button id="' . $row['idnhanvien'] . '" type="button" 
                         class="btn btn-primary flex-fill mx-1" 
                         data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Sửa
+                        Edit
                         </button>
-                        <a href="./database/staff/delete_staff.php?idnhanvien=' . $row['idnhanvien'] . '"><button type="button" class="btn btn-danger flex-fill mx-1">Xóa</button></a>
+                        <a href="./database/staff/delete_staff.php?idnhanvien=' . $row['idnhanvien'] . '"><button type="button" class="btn btn-danger flex-fill mx-1">Delete</button></a>
                     </td>
                 </tr>
         ';
@@ -160,7 +160,7 @@ if (!isset($_COOKIE['user']))
         const btnList = document.getElementsByTagName("button");
         for (btn of btnList) {
 
-            if (btn.outerText === 'Sửa') {
+            if (btn.outerText === 'Edit') {
                 // lấy dữ liệu
                 const id = btn.id
                 const row = document.querySelectorAll(`tr[id="${btn.id}"] td`)

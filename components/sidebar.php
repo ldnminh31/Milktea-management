@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <div id="product" class="sidebar-item">Sản phẩm</div>
+    <div id="product" class="sidebar-item">Product</div>
     <div id="staff" class="sidebar-item">Nhân viên</div>
     <div id="invoice" class="sidebar-item">Hóa đơn</div>
     <div id="customer" class="sidebar-item">Khách hàng</div>

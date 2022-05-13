@@ -26,15 +26,15 @@ if (!isset($_COOKIE['user']))
 
     <!-- table -->
     <div class="d-flex align-items-center flex-column">
-        <h2 align="center">Quản lý sản phẩm</h2>
-        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm sản phẩm</button>
+        <h2 align="center">MANAGE PRODUCT</h2>
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add product</button>
         <table class="table table-striped w-75">
             <thead>
                 <tr>
-                    <th scope="col">Tên sản phẩm</th>
-                    <th scope="col" class="text-center">Đơn giá</th>
-                    <th width="30%" scope="col">Mô tả</th>
-                    <th class="text-center" scope="col">Hành động</th>
+                    <th scope="col">Add product</th>
+                    <th scope="col" class="text-center">Price</th>
+                    <th width="30%" scope="col">Description</th>
+                    <th class="text-center" scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,14 +45,15 @@ if (!isset($_COOKIE['user']))
                 $res = $conn->query($sql);
                 foreach ($res as $row) {
                     array_push($data, $row);
+                    var_dump($row);
                     echo '
              <tr id='.$row['idsanpham'].'>
                     <td scope="row">' . $row['tensanpham'] . '</td>
                     <td align="center">' . number_format($row['dongia']) . '</td>
                     <td data-label="Mô tả">' . $row['mota'] . '</td>
                     <td class="d-flex" data-label="Hành động">
-                        <button id="'.$row['idsanpham'].'" type="button" class="btn btn-primary flex-fill mx-1" data-bs-toggle="modal" data-bs-target="#updateModal">Sửa</button>
-                        <a href="./database/product/delete_product.php?tensanpham=' . $row['tensanpham'] . '"><button type="button" class="btn btn-danger flex-fill mx-1">Xóa</button></a>
+                        <button id="'.$row['idsanpham'].'" type="button" class="btn btn-primary flex-fill mx-1" data-bs-toggle="modal" data-bs-target="#updateModal">Edit</button>
+                        <a href="./database/product/delete_product.php?tensanpham=' . $row['tensanpham'] . '"><button type="button" class="btn btn-danger flex-fill mx-1">Delete</button></a>
                     </td>
                 </tr>
         ';
@@ -66,7 +67,7 @@ if (!isset($_COOKIE['user']))
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thêm sản phẩm</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add product</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -95,7 +96,7 @@ if (!isset($_COOKIE['user']))
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cập nhật sản phẩm</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update product</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -122,7 +123,7 @@ if (!isset($_COOKIE['user']))
     <script>
         const btnList = document.getElementsByTagName("button");
         for (btn of btnList)
-                if (btn.outerText==='Sửa') {
+                if (btn.outerText==='Edit') {
                     // lấy dữ liệu
                     const id = btn.id
                     const row = document.querySelectorAll(`tr[id="${btn.id}"] td`)
