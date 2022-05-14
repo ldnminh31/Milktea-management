@@ -3,7 +3,7 @@
     <tr>
       <th style="text-align: left" scope="col">Invoice date</th>
       <th style="text-align: right" scope="col">Total</th>
-      <th style="text-align: center" scope="col">Detail</th>
+      <th style="text-align: center" scope="col">Action</th>
       <th style="text-align: center" scope="col"></th>
     </tr>
   </thead>
@@ -28,7 +28,7 @@
       echo "<tr>";
       echo "<td>" . $invoice->ngaylap . "</td>";
       echo '<td align="right">' . number_format(countTotal($invoice->chitiet)) . '</td>';
-      echo '<td align="center"><a target="_blank" href="./invoice_detail.php?id=' . $item['idhoadon'] . '">View</a></td>';
+      echo '<td align="center"><a style="margin-right: 5px" target="_blank" href="./invoice_detail.php?id=' . $item['idhoadon'] . '">Detail</a><a href="">Delete</a></td>';
       echo "</tr>";
     }
     // modal detail
