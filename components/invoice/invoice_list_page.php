@@ -28,7 +28,7 @@
       echo "<tr>";
       echo "<td>" . $invoice->ngaylap . "</td>";
       echo '<td align="right">' . number_format(countTotal($invoice->chitiet)) . '</td>';
-      echo '<td align="center"><a style="margin-right: 5px" target="_blank" href="./invoice_detail.php?id=' . $item['idhoadon'] . '">Detail</a><a href="">Delete</a></td>';
+      echo '<td align="center"><a style="margin-right: 5px" target="_blank" href="./invoice_detail.php?id=' . $item['idhoadon'] . '">Detail</a><a href="./database/invoice/delete_invoice.php?id='.$item['idhoadon'].'">Delete</a></td>';
       echo "</tr>";
     }
     // modal detail

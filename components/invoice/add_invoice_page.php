@@ -6,3 +6,9 @@
     <b>Total: </b>
     <button type="submit" class="btn btn-primary d-flex mx-auto px-5 mt-3">Create</button>
 </form>
+<!-- Count total -->
+<script>
+    $("input").change(()=>{
+        console.log($(this).attr('price'))
+    })
+</script>

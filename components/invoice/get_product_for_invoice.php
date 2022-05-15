@@ -10,6 +10,7 @@ echo '<tr>
 class TableRows extends RecursiveIteratorIterator
 {
     private $id = "";
+    private $price = 0;
     function __construct($it)
     {
         parent::__construct($it, self::LEAVES_ONLY);
@@ -20,8 +21,10 @@ class TableRows extends RecursiveIteratorIterator
         $value = parent::current();
         if ($key == "idsanpham") $this->id = $value;
         setlocale(LC_MONETARY, "en_US");
-        if (is_numeric($value))
+        if (is_numeric($value)) {
+            $this->price = $value;
             return '<td align="center" >' . number_format($value) . "</td>";
+        }
         else
             return '<td>' . $value . "</td>";
     }
@@ -32,7 +35,7 @@ class TableRows extends RecursiveIteratorIterator
 
     function endChildren()
     {
-        echo '<td><input required name=' . $this->id . ' value="0" min="0" type="number"/></td>';
+        echo '<td><input price="'.$this->price.'" required name=' . $this->id . ' value="0" min="0" type="number"/></td>';
         echo "</tr>" . "\n";
     }
 }
