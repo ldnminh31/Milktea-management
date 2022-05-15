@@ -22,10 +22,10 @@ if (!isset($_COOKIE['user']))
     include_once("./database/connect.php");
 
     ?>
-    <div>
+    <div class="d-flex align-items-center flex-column">
         <h2 align="center">MANAGE CUSTOMER</h2>
-        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: auto; display: block">Customer's name</button>
-        <table class="table table-striped ">
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: auto; display: block">Add customer</button>
+        <table class="table table-striped w-75">
             <thead>
                 <tr>
                     <th scope="col">Customer's name</th>

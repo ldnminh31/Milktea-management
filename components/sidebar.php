@@ -1,11 +1,11 @@
+
 <div class="sidebar">
     <div id="product" class="sidebar-item">Product</div>
     <div id="staff" class="sidebar-item">Staff</div>
     <div id="invoice" class="sidebar-item">Invoice</div>
     <div id="customer" class="sidebar-item">Customer</div>
-    <!-- <div id="main-info" class="sidebar-item ">Thông tin cửa hàng</div> -->
     <div id="logout" class="sidebar-item bot-sidebar">Logout</div>
-</div>
+</div> 
 <script type="module">
     window.onhashchange = function() {
         alert("Changed")
@@ -20,8 +20,10 @@
     for (let item of itemList) {
         if (item.id === 'logout') {
             item.addEventListener('click', () => {
-                deleteAllCookies()
+                if(confirm('Do you want to logout?') == true){
+                    deleteAllCookies()
                 window.location.replace("./index.php")
+                } 
             })
         }
         if (item.id === 'product') {
