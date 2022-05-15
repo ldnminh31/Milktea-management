@@ -3,12 +3,25 @@
     <?php
     include_once './components/invoice/get_product_for_invoice.php';
     ?>
-    <b>Total: </b>
+    <div class="text-center"><b >Total: <span id="total">0</span></b></div>
     <button type="submit" class="btn btn-primary d-flex mx-auto px-5 mt-3">Create</button>
 </form>
 <!-- Count total -->
 <script>
-    $("input").change(()=>{
-        console.log($(this).attr('price'))
+    let total = 0;
+    let obj = {}
+    $("input").change(function() {
+        const name = $(this).attr('name')
+        const price = parseInt($(this).attr('price'))
+        const val = parseInt($(this).val())
+        if (!obj[name]){
+            obj[name] = val
+            total += price
+        } else {
+            total -= price*obj[name];
+            obj[name] = val;
+            total += price*obj[name];
+        }
+        $("#total").html(total)
     })
 </script>
