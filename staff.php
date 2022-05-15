@@ -24,7 +24,7 @@ if (!isset($_COOKIE['user']))
     <div class="d-flex align-items-center flex-column">
         <h2 align="center">MANAGE STAFF</h2>
         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: auto; display: block">Add staff</button>
-        <table class="table table-striped w-75">
+        <table class="table table-striped w-100">
             <thead>
                 <tr>
                     <th scope="col">Staff's name</th>
