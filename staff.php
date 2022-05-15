@@ -175,7 +175,7 @@ if (!isset($_COOKIE['user']))
                     inputList.forEach((value, key) => {
                         value.defaultValue = data[key]
                     })
-                    document.querySelector(".modal-title").innerText = "Update thông tin";
+                    document.querySelector(".modal-title").innerText = "Update staff";
                     document.getElementById("submit-btn").innerText = "Update";
                 })
             }
