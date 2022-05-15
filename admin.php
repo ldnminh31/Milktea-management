@@ -18,9 +18,11 @@ if (!isset($_COOKIE['user']))
 
 <body>
     <?php include_once('./components/sidebar.php') ?>
-    <h1 class="animate__animated animate__bounce " style="text-align: center">Welcome admin!</h1>
+    <div class="text-center wrapper">
+        <h1 class="animate__animated animate__bounce" style="text-align: center">Welcome admin!</h1>
+        <img src="./image/admin.jpg" width="50%" alt="" srcset="">
+    </div>
 
-    
 
 </body>
 

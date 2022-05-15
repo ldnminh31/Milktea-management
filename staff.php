@@ -21,10 +21,10 @@ if (!isset($_COOKIE['user']))
     <?php
     include_once('./components/sidebar.php');
     ?>
-    <div>
-        <h2 align="center">Manage staff</h2>
+    <div class="d-flex align-items-center flex-column">
+        <h2 align="center">MANAGE STAFF</h2>
         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: auto; display: block">Add staff</button>
-        <table class="table table-striped">
+        <table class="table table-striped w-75">
             <thead>
                 <tr>
                     <th scope="col">Staff's name</th>
