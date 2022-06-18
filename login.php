@@ -6,7 +6,7 @@ const ADMIN_PSW = "123456";
 $username =  $_POST['username'];
 $password = $_POST['password'];
 if ($username!=ADMIN_USERNAME || $password!=ADMIN_PSW){
-    echo "<script type='text/javascript'>alert('Login failed'); window.location = '/'</script>";
+    echo "<script type='text/javascript'>alert('Login failed'); window.location = 'login.php'</script>";
 }
 else{
     setcookie('user','admin',time()+60*60*24*30);
