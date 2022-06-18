@@ -1,7 +1,7 @@
 <?php
 //check login
 if (isset($_COOKIE['user'])) {
-  echo "<script>window.location.replace('/NLCS/admin.php');</script>";
+  echo "<script>window.location.replace('login.php');</script>";
 }
 echo "<script>window.history.forward()</script>";
 ?>
